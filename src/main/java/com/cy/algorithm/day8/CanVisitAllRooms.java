@@ -67,4 +67,24 @@ public class CanVisitAllRooms {
         return n == num;
     }
 
+    int num = 0;
+    boolean[] vis;
+
+    public boolean canVisitAllRoomsDfs(List<List<Integer>> rooms) {
+        int n = rooms.size();
+        vis = new boolean[n];
+
+        dfs(0, rooms);
+        return n == num;
+    }
+
+    private void dfs(int x, List<List<Integer>> rooms) {
+        vis[x] = true;
+        num++;
+        for (Integer s : rooms.get(x)) {
+            if (!vis[s]) {
+                dfs(s, rooms);
+            }
+        }
+    }
 }
