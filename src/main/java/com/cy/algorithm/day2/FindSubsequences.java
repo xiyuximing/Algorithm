@@ -52,6 +52,7 @@ public class FindSubsequences {
     }
 
     public static void main(String[] args) {
-
+        FindSubsequences f = new FindSubsequences();
+        f.findSubsequences(new int[]{4,6,7,7});
     }
 }
